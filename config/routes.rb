@@ -47,7 +47,7 @@ Gitlab::Application.routes.draw do
   get "/s/:username" => "snippets#user_index", as: :user_snippets, constraints: { username: /.*/ }
 
   #
-  # Explroe area
+  # Explore area
   #
   namespace :explore do
     resources :projects, only: [:index] do
@@ -183,7 +183,7 @@ Gitlab::Application.routes.draw do
       put :transfer
       post :archive
       post :unarchive
-      post :upload_image
+      post :upload_file
       post :toggle_star
       get :autocomplete_sources
       get :import
