@@ -13,10 +13,10 @@ module Projects
         alt = file.original_filename
         uploader.store!(file)
         link = {
-                 'alt' => File.basename(alt, '.*'),
-                 'url' => File.join(@root_url, uploader.url),
-                 'is_image' => image?(file)
-               }
+          'alt' => File.basename(alt, '.*'),
+          'url' => File.join(@root_url, uploader.url),
+          'is_image' => image?(file)
+        }
       else
         link = nil
       end

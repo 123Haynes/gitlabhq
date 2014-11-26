@@ -22,7 +22,10 @@ describe ProjectsController do
 
     context "with valid image" do
       before do
-        post :upload_file, id: project.to_param, markdown_file: jpg, format: :json
+        post :upload_file, 
+          id: project.to_param,
+          markdown_file: jpg,
+          format: :json
       end
 
       it "returns a content with original filename, new link, and correct type." do

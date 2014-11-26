@@ -146,7 +146,8 @@ class ProjectsController < ApplicationController
   end
 
   def upload_file
-    link_to_file = ::Projects::FileService.new(repository, params, root_url).execute
+    link_to_file = ::Projects::FileService.new(repository, params, root_url).
+      execute
 
     respond_to do |format|
       if link_to_file

@@ -10,7 +10,9 @@ describe Projects::FileService do
     context 'for valid gif file' do
       before do
         gif = fixture_file_upload(Rails.root + 'spec/fixtures/banana_sample.gif', 'image/gif')
-        @link_to_image = upload_image(@project.repository, { 'markdown_file' => gif }, "http://test.example/")
+        @link_to_image = upload_image(@project.repository,
+          { 'markdown_file' => gif },
+          "http://test.example/")
       end
 
       it { expect(@link_to_image).to have_key("alt") }
@@ -24,8 +26,11 @@ describe Projects::FileService do
 
      context 'for valid png file' do
       before do
-        png = fixture_file_upload(Rails.root + 'spec/fixtures/dk.png', 'image/png')
-        @link_to_image = upload_image(@project.repository, { 'markdown_file' => png }, "http://test.example/")
+        png = fixture_file_upload(Rails.root + 'spec/fixtures/dk.png',
+          'image/png')
+        @link_to_image = upload_image(@project.repository,
+          { 'markdown_file' => png },
+          "http://test.example/")
       end
 
       it { expect(@link_to_image).to have_key("alt") }
@@ -55,7 +60,9 @@ describe Projects::FileService do
     context 'for txt file' do
       before do
         txt = fixture_file_upload(Rails.root + 'spec/fixtures/doc_sample.txt', 'text/plain')
-        @link_to_image = upload_image(@project.repository, { 'markdown_file' => txt }, "http://test.example/")
+        @link_to_image = upload_image(@project.repository,
+          { 'markdown_file' => txt },
+          "http://test.example/")
       end
 
       it { expect(@link_to_image).to have_key("alt") }
